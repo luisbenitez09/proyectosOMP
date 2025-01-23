@@ -36,12 +36,8 @@ int main()
 		array_b[i] = std::rand() % 100 + 1;
 	}
 
-
-
 	std::cout << "Suma de arreglos con una solucion paralela.\n";
 	std::cout << "Alumno A01795165.\n";
-
-
 
 	// Sumamos los arrays a y b y guardamos el resultado en el array c usando paralelismo para mejorar el rendimiento
 #pragma omp parallel for shared(array_a, array_b, array_c) private(i) schedule(static, chunk_size)
